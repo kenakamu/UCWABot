@@ -1,6 +1,7 @@
 # Looking for Skype for Business bot?
-Now Microsoft BotFramework support Skype for Business as one of its channel. Use it for bot account!
+Now Microsoft BotFramework support Skype for Business Online as one of its channel. Use it for bot account!
 See [Bot Framework Page](http://dev.botframework.com) for detail.
+For On-Premise? You can use UCMA to implement it, or use the code in this repo for small start.
 
 # UCWA 2.0 sample for BotFramework
 This is a combined example of UCWA 2.0 and Bot Framework Direct Line.

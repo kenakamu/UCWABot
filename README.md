@@ -1,12 +1,16 @@
+# Looking for Skype for Business bot?
+Now Microsoft BotFramework support Skype for Business as one of its channel. Use it for bot account!
+See [Bot Framework Page](http://dev.botframework.com) for detail.
+
 # UCWA 2.0 sample for BotFramework
 This is a combined example of UCWA 2.0 and Bot Framework Direct Line.
 - See [UCWA2.0-CS](https://github.com/kenakamu/ucwa2.0-cs) repo for UCWA SDK detail
 - See [Direct Line v3](https://docs.botframework.com/en-us/restapi/directline3/#navtitle) page for Direct Line detail.
 
 # What is this and how it works?
-Let's say you have your bot up and running which is implemented by using Microsoft Bot Framework. And your organization uses Skype for Business Online. Then this sample helps you to connect these two to make Skype for Buisness bot.
+Let's say you have your bot logic up and running which is implemented by using Microsoft Bot Framework. And your organization uses Skype for Business. Then this sample helps you to connect these two.
 
-You use UCWA 2.0 to sigin a bot account into Skype for Business server, and wait until someone talks to the bot. When bot account receives a message, it simply route the message to Bot Connector via Direct Line and let your code handles it. When the operation done, then the bot gets the results back and it simply route the results to a user. Simple, eh?
+You use UCWA 2.0 to sigin a user account into Skype for Business, and wait until someone talks to the account. When the account receives a message, it simply route the message to Bot Connector via Direct Line and let your code handles it. When the operation done, then it simply redirect the results to a user who asked the question. Simple, eh?
 
 # Caution
 There are something you need to understand (and welcome your contribution.)

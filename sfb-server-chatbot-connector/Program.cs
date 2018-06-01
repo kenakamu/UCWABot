@@ -30,7 +30,7 @@ namespace UCWABot
         {
             dClient = new DirectLineClient(directLineSecret);
             client = new UCWAClient();
-            client.SendingRequest += (client, resource) => { client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", TokenService.AquireAADToken(resource)); };
+            client.SendingRequest += (client, resource) => { client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", TokenService.AquireOnPremToken(resource)); };
 
             client.MessageReceived += Client_MessageReceived;
             client.MessagingInvitationReceived += Client_MessagingInvitationReceived;
@@ -44,9 +44,9 @@ namespace UCWABot
 
             #region Initial message
 
-            Console.WriteLine("**************************************************");
-            Console.WriteLine("****  UCWA C# SDK Sample Bot application. ****");
-            Console.WriteLine("**************************************************");
+            Console.WriteLine("***********************************************");
+            Console.WriteLine("***  Skype for Business (Server) Connector  ***");
+            Console.WriteLine("***********************************************");
             Console.WriteLine("");
 
             #endregion
@@ -54,6 +54,10 @@ namespace UCWABot
 
         private void Client_MessageReceived(Message message)
         {
+            // Is Typing
+            var messaging = message.GetMessaging().Result;
+            messaging.SetIsTyping().Wait();
+
             var sip = message.GetParticipant().Result.Uri;
             // Check conversationId from queue
             var queue = queues.Where(x => x.Sip == sip).FirstOrDefault();

@@ -1,4 +1,4 @@
-# Skype for Business (Server) Chatbot Connector
+# Skype for Business Server Chatbot Connector
 
 Connects an Azure Chatbot to Skype for Business **Server**
 
@@ -28,12 +28,14 @@ Connects an Azure Chatbot to Skype for Business **Server**
 
 5. Run the application and start a conversation with the Chatbot in the Skype for Business client
 
+![Chatbot running in Skype for Business Server](https://user-images.githubusercontent.com/28813834/40840810-7b0086b0-65a8-11e8-863b-1c6f6c1e87e4.PNG)
+
 ## Publish the application to Azure
-1. Publish the application as an Azure WebJob and set it to constantly running
+1. Right click on the **sfb-server-chatbot-connector** project under the solution explorer in Visual Studio
+2. Click on **Publish as Azure WebJob**
+3. Choose a name for the WebJob and set the run mode to **Run Continuously**, otherwise the application won't work for a long time
+4. Select **Microsoft Azure App Service** as the publish target and finish the publish configuration
 
-## How it works
-
-Coming soon
 
 ## Limitations
 
@@ -45,7 +47,9 @@ Your contribution is highly welcomed
 Special thanks to Kenichiro Nakamura and Tam Huynh on which work this application is based on:
 
 https://github.com/kenakamu/UCWABot
+
 https://github.com/kenakamu/ucwa2.0-cs
+
 https://github.com/tamhinsf/ucwa-sfbo-console
 
 ### Disclaimer

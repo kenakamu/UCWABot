@@ -19,16 +19,17 @@ Connects an Azure Chatbot to Skype for Business **Server**
   * Change **SfbUsername** and **SfbPassword** to the credentials of your Skype for Business Server account
   * Change **DirectLineSecret** to the secret key in the Direct Line configuration of your Azure Chatbot
 
-```cs
+```c#
 <add key="Tenant" value="REPLACEWITH_Tenant" />
 <add key="SfbUsername" value="REPLACEWITH_SfbUsername" />
 <add key="SfbPassword" value="REPLACEWITH_SfbPassword" />
 <add key="DirectLineSecret" value="REPLACEWITH_DirectLineSecret" />
 ```
 
+5. Run the application and start a conversation with the Chatbot in the Skype for Business client
+
 ## Publish the application to Azure
-1. Run the application and start a conversation with the Chatbot in the Skype for Business client
-2. Publish the application as an Azure WebJob and set it to constantly running
+1. Publish the application as an Azure WebJob and set it to constantly running
 
 ## How it works
 

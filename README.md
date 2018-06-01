@@ -1,4 +1,4 @@
-# Skype for Business (Server) Chatbot
+# Skype for Business (Server) Chatbot Connector
 
 Connects an Azure Chatbot to Skype for Business **Server**
 
@@ -7,7 +7,7 @@ Connects an Azure Chatbot to Skype for Business **Server**
 ## Prerequisites
 
 * An Azure Chatbot with a [Direct Line](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-directline?view=azure-bot-service-3.0) configuration
-* A Skype for Business Server account for binding the Azure Chatbot
+* A regular Skype for Business Server account with a license for binding the Azure Chatbot
 
 ## Get started
 
@@ -19,11 +19,11 @@ Connects an Azure Chatbot to Skype for Business **Server**
   * Change **SfbUsername** and **SfbPassword** to the credentials of your Skype for Business Server account
   * Change **DirectLineSecret** to the secret key in the Direct Line configuration of your Azure Chatbot
 
-```csharp
+```cs
 <add key="Tenant" value="REPLACEWITH_Tenant" />
 <add key="SfbUsername" value="REPLACEWITH_SfbUsername" />
 <add key="SfbPassword" value="REPLACEWITH_SfbPassword" />
-<add key="DirectLineSecret" value="REPLACEWITH_DirectLineSecret" 
+<add key="DirectLineSecret" value="REPLACEWITH_DirectLineSecret" />
 ```
 
 ## Publish the application to Azure

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCWABot", "UCWABot\UCWABot.csproj", "{62AF542D-AA3B-47D7-AF27-5A913E4F9977}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sfb-server-chatbot-connector", "sfb-server-chatbot-connector\sfb-server-chatbot-connector.csproj", "{62AF542D-AA3B-47D7-AF27-5A913E4F9977}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6A3CA90-B466-4305-8787-221B0D7E26E8}
 	EndGlobalSection
 EndGlobal

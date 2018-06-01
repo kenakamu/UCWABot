@@ -19,7 +19,7 @@ Connects an Azure Chatbot to Skype for Business **Server**
   * Change **SfbUsername** and **SfbPassword** to the credentials of your Skype for Business Server account
   * Change **DirectLineSecret** to the secret key in the Direct Line configuration of your Azure Chatbot
 
-```c#
+```xml
 <add key="Tenant" value="REPLACEWITH_Tenant" />
 <add key="SfbUsername" value="REPLACEWITH_SfbUsername" />
 <add key="SfbPassword" value="REPLACEWITH_SfbPassword" />

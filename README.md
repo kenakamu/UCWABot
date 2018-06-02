@@ -31,10 +31,13 @@ Connects an Azure Chatbot to Skype for Business **Server**
 ![Chatbot running in Skype for Business Server](https://user-images.githubusercontent.com/28813834/40840810-7b0086b0-65a8-11e8-863b-1c6f6c1e87e4.PNG)
 
 ## Publish the application to Azure
-1. Right click on the **sfb-server-chatbot-connector** project under the solution explorer in Visual Studio
-2. Click on **Publish as Azure WebJob**
-3. Choose a name for the WebJob and set the run mode to **Run Continuously**, otherwise the application won't work for a long time
-4. Select **Microsoft Azure App Service** as the publish target and finish the publish configuration
+1. Install the Azure development workload in Visual Studio
+2. Right click on the **sfb-server-chatbot-connector** project under the solution explorer in Visual Studio
+3. Click on **Publish as Azure WebJob**
+4. Choose a name for the WebJob and set the run mode to **Run Continuously**
+5. Select **Microsoft Azure App Service** as the publish target and finish the publish configuration
+6. In the Azure Portal, head to the App Service to which you've published the Azure WebJob
+7. Click on **Application settings** and set **Always on** to **on**
 
 
 ## Limitations

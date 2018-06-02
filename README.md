@@ -1,32 +1,60 @@
-# Looking for Skype for Business bot?
-Now Microsoft BotFramework support Skype for Business Online as one of its channel. Use it for bot account!
-See [Bot Framework Page](http://dev.botframework.com) for detail.
-For On-Premise? You can use UCMA to implement it, or use the code in this repo for small start.
+# Skype for Business Server Chatbot Connector
 
-# UCWA 2.0 sample for BotFramework
-This is a combined example of UCWA 2.0 and Bot Framework Direct Line.
-- See [UCWA2.0-CS](https://github.com/kenakamu/ucwa2.0-cs) repo for UCWA SDK detail
-- See [Direct Line v3](https://docs.botframework.com/en-us/restapi/directline3/#navtitle) page for Direct Line detail.
+Connects an Azure Chatbot to Skype for Business **Server**
 
-# What is this and how it works?
-Let's say you have your bot logic up and running which is implemented by using Microsoft Bot Framework. And your organization uses Skype for Business. Then this sample helps you to connect these two.
+*Info: Microsoft Bot Framework supports Skype for Business __Online__ as one of its channel. Configure your chatbot in the Azure Portal, if you want to run it in Skype for Business Online*.
 
-You use UCWA 2.0 to sigin a user account into Skype for Business, and wait until someone talks to the account. When the account receives a message, it simply route the message to Bot Connector via Direct Line and let your code handles it. When the operation done, then it simply redirect the results to a user who asked the question. Simple, eh?
+## Prerequisites
 
-# Caution
-There are something you need to understand (and welcome your contribution.)
+* An Azure Chatbot with a [Direct Line](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-directline?view=azure-bot-service-3.0) configuration
+* A regular Skype for Business Server account with a license for binding the Azure Chatbot
 
-1. It DOES NOT scale. UCWA 2.0 is for user level operation. You cannot run the code in multiple computers to scale out as they may receive same messages same time, and it may end up duplicates work.
-2. This sample only handles text messages. It doesn't handle rich response such as attachments nor lists.
+## Get started
 
-# How to start
-[UCWA side]
-See [UCWA2.0-CS](https://github.com/kenakamu/ucwa2.0-cs) repo how to setup.
-[Bot Framework side]
-See [BotFramework Homepage](https://docs.botframework.com/en-us/) for detail.
+1. Install Visual Studio
+2. Clone this GitHub repository
+3. Open the cloned repository in Visual Studio
+4. Edit the **app.config** file in the **sfb-server-chatbot-connector** project
+  * Change **Tenant** to the tenant of your Skype for Business envoirment, which is typically in the form of *your-domain.com*
+  * Change **SfbUsername** and **SfbPassword** to the credentials of your Skype for Business Server account
+  * Change **DirectLineSecret** to the secret key in the Direct Line configuration of your Azure Chatbot
 
-# License
-MIT
+```xml
+<add key="Tenant" value="REPLACEWITH_Tenant" />
+<add key="SfbUsername" value="REPLACEWITH_SfbUsername" />
+<add key="SfbPassword" value="REPLACEWITH_SfbPassword" />
+<add key="DirectLineSecret" value="REPLACEWITH_DirectLineSecret" />
+```
+
+5. Run the application and start a conversation with the Chatbot in the Skype for Business client
+
+![Chatbot running in Skype for Business Server](https://user-images.githubusercontent.com/28813834/40840810-7b0086b0-65a8-11e8-863b-1c6f6c1e87e4.PNG)
+
+## Publish the application to Azure
+1. Install the Azure development workload in Visual Studio
+2. Right click on the **sfb-server-chatbot-connector** project under the solution explorer in Visual Studio
+3. Click on **Publish as Azure WebJob**
+4. Choose a name for the WebJob and set the run mode to **Run Continuously**
+5. Select **Microsoft Azure App Service** as the publish target and finish the publish configuration
+6. In the Azure Portal, head to the App Service to which you've published the Azure WebJob
+7. Click on **Application settings** and set **Always on** to **on**
 
 
+## Limitations
+
+* Rich text is not supported
+
+Your contribution is highly welcomed
+
+## Appendix
+Special thanks to Kenichiro Nakamura and Tam Huynh on which work this application is based on:
+
+https://github.com/kenakamu/UCWABot
+
+https://github.com/kenakamu/ucwa2.0-cs
+
+https://github.com/tamhinsf/ucwa-sfbo-console
+
+### Disclaimer
+This code is provided without any warranty of any kind
 
